@@ -1,0 +1,19 @@
+User Request
+  │
+  ▼
+[Callbacks: Validate Input & Log Prompt]
+  │
+  ▼
+[Root Agent: ReadyNow Greeter & Coordinator]
+  ├──> If Weather: [Weather Sub-Agent] ──> (NWS Tool)
+  ├──> If Evacuation: [Routing Sub-Agent] ──> (Google Maps Route Tool)
+  └──> If General Info: [Sequential Answer Team]
+           ├──> 1. [Search Agent] ──> (Google Search Tool)
+           ├──> 2. [Critique Agent] (Validates search results)
+           └──> 3. [Refine Agent] (Formats final emergency output)
+  │
+  ▼
+[Callbacks: Log Model Response]
+  │
+  ▼
+User Output
